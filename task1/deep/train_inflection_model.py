@@ -84,9 +84,9 @@ def train(pairs, dev_pairs, lang, lang_label, setting, encoder, decoder, loss_fu
         
         # Overwrite saved model if dev acc is higher
         if dev_acc > last_dev_acc:
-            print("saving ... /home/adam/conll2018/task1/deep/models/%s/encoder-%s-%s" % (setting, lang_label))
-            torch.save(encoder, "/home/adam/conll2018/task1/deep/models/%s/encoder-%s-%s" % (setting, lang_label))
-            torch.save(decoder, "/home/adam/conll2018/task1/deep/models/%s/decoder-%s-%s" % (setting, lang_label))
+            print("saving ... /home/adam/conll2018/task1/deep/models/%s/encoder-%s" % (setting, lang_label))
+            torch.save(encoder, "/home/adam/conll2018/task1/deep/models/%s/encoder-%s" % (setting, lang_label))
+            torch.save(decoder, "/home/adam/conll2018/task1/deep/models/%s/decoder-%s" % (setting, lang_label))
 
         last_dev_acc = dev_acc
 
@@ -142,7 +142,7 @@ if __name__=='__main__':
     input_size = output_size = len(char2i.keys())
     print(char2i)
     char_output = open(\
-        '/home/adam/phonological-reinflection-pytorch/models/%s/char2i-%s.pkl' %\
+        '/home/adam/conll2018/task1/deep/models/%s/char2i-%s.pkl' %\
         (setting, lang_label), 'wb')
     pickle.dump(char2i, char_output)
     
